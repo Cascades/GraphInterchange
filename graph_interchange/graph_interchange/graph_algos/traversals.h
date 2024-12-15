@@ -9,7 +9,7 @@
 
 namespace gic
 {
-namespace algos
+namespace alg
 {
   template <typename GraphT, typename NodeT, typename ConnItr, typename NodeItr, typename OpT>
   inline void DepthFirstPre(

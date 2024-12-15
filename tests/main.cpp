@@ -30,7 +30,7 @@ void runTest(const gic::NodeFuncs<GraphT, NodeT, NodeItr, ConnItr>& funcs, std::
   {
     std::vector<const NodeT*> traversedOrder;
     traversedOrder.reserve(6);
-    gic::algos::DepthFirstPre(&funcs, &ng, [&traversedOrder](const NodeT* n) { traversedOrder.emplace_back(n); });
+    gic::alg::DepthFirstPre(&funcs, &ng, [&traversedOrder](const NodeT* n) { traversedOrder.emplace_back(n); });
     const std::vector<const NodeT*> expectedPreOrder{ node0, node1, node2, node3, node4, node5 };
     assert(std::equal(traversedOrder.cbegin(), traversedOrder.cend(), expectedPreOrder.cbegin(), expectedPreOrder.cend()));
   }
@@ -38,7 +38,7 @@ void runTest(const gic::NodeFuncs<GraphT, NodeT, NodeItr, ConnItr>& funcs, std::
   {
     std::vector<const NodeT*> traversedOrder;
     traversedOrder.reserve(6);
-    gic::algos::DepthFirstPost(&funcs, &ng, [&traversedOrder](const NodeT* n) { traversedOrder.emplace_back(n); });
+    gic::alg::DepthFirstPost(&funcs, &ng, [&traversedOrder](const NodeT* n) { traversedOrder.emplace_back(n); });
     const std::vector<const NodeT*> expectedPostOrder{ node2, node1, node0, node5, node4, node3 };
     assert(std::equal(traversedOrder.cbegin(), traversedOrder.cend(), expectedPostOrder.cbegin(), expectedPostOrder.cend()));
   }
